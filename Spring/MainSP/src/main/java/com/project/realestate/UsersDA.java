@@ -15,7 +15,7 @@ public class UsersDA {
 	String url="jdbc:mysql://localhost/realestate";
 	String user="root";
 	String pass="abu420";
-	String loginStatement="SELECT * FROM users WHERE email=? OR user_name=? AND password=?";
+	String loginStatement="SELECT * FROM users WHERE email=? OR userName=? AND password=?";
 	
 	public Users login(String userName, String password) {
 		Users users=null;

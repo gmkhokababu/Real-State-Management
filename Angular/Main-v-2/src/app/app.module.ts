@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './components/main/admin/admin.component';
 import { NavComponent } from './components/main/nav/nav.component';
 import { DashboardComponent } from './components/main/admin/dashboard/dashboard.component';
+import { OurProjectsComponent } from './components/visitor/our-projects/our-projects.component';
+import { RentComponent } from './components/visitor/rent/rent.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DashboardComponent } from './components/main/admin/dashboard/dashboard.
     LoginComponent,
     AdminComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    OurProjectsComponent,
+    RentComponent
   ],
   imports: [
     BrowserModule,

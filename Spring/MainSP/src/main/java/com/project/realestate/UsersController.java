@@ -12,9 +12,9 @@ public class UsersController {
 	//---------------------------user login--------------------------
 	
 		@GetMapping("/{id}/{password}")
-		public Users m3(@PathVariable String id,@PathVariable String password) {
+		public Users login(@PathVariable String id,@PathVariable String password) {
 			UsersDA da= new UsersDA();
-			Users data = da.login(id,password);
+			Users data = da.login(id, password);
 			return data;
 		}
 
