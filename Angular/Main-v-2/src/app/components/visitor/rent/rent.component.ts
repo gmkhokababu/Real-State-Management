@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-rent',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentComponent implements OnInit {
 
-  constructor() { }
+  allproperty:any=[];
+  constructor(private myservice:LoginService) {
+    this.myservice.showall().subscribe((x)=>{this.allproperty=x});
+   }
 
   ngOnInit(): void {
   }

@@ -16,6 +16,7 @@ public class UsersDA {
 	String user="root";
 	String pass="abu420";
 	String loginStatement="SELECT * FROM users WHERE email=? OR userName=? AND password=?";
+	String createuser="INSERT INTO users(name,email,userName,password,role) VALUES(?,?,?,?,?)";
 	
 	public Users login(String userName, String password) {
 		Users users=null;
@@ -34,6 +35,25 @@ public class UsersDA {
 		}
 
 		return users;
+	}
+//	"INSERT INTO users(name,email,userName,password,role) VALUES(?,?,?,?,?)"
+	public Users create(Users u) {
+//		Users users=null;
+		try {
+			con=DriverManager.getConnection(url,user,pass);
+			ps=con.prepareStatement(createuser);
+			ps.setString(1, u.getName());
+			ps.setString(2, u.getEmail());
+			ps.setString(3, u.getUserName());
+			ps.setString(4, u.getPassword());
+			ps.setString(5, u.getRole());
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+		}
+
+		return u;
 	}
 
 }

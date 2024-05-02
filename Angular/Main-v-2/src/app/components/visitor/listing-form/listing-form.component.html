@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div>
+    <div>
+        <div class="container my-5">
+            <form (ngSubmit)="saveproperty()">
+                <div class="mb-3">
+                  <label for="propertyId" class="form-label">Property Id</label>
+                  <input type="text" class="form-control" id="propertyId" name="propertyId" [(ngModel)]="propertyId">
+                </div>
+                <div class="mb-3">
+                  <label for="type" class="form-label">Property Type</label>
+                  <input type="text" class="form-control" id="type" name="type" [(ngModel)]="type">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" [(ngModel)]="location">
+                  </div>
+                  <div class="mb-3">
+                    <label for="size" class="form-label">size</label>
+                    <input type="text" class="form-control" id="size" name="size" [(ngModel)]="size">
+                  </div>
+                  <div class="mb-3">
+                    <label for="details" class="form-label">Details</label>
+                    <input type="text" class="form-control" id="details" name="details" [(ngModel)]="details">
+                  </div>
+                  <div class="mb-3">
+                    <label for="status" class="form-label">Stutas</label >
+                    <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status">
+                  </div>
+                  <div class="mb-3">
+                    <label for="landlordId" class="form-label">Landlord Id</label>
+                    <input type="text" class="form-control" id="landlordId" name="landlordId" [(ngModel)]="landlordId">
+                  </div>
+                  
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

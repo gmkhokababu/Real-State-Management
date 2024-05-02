@@ -16,6 +16,8 @@ import { NavComponent } from './components/main/nav/nav.component';
 import { DashboardComponent } from './components/main/admin/dashboard/dashboard.component';
 import { OurProjectsComponent } from './components/visitor/our-projects/our-projects.component';
 import { RentComponent } from './components/visitor/rent/rent.component';
+import { RentalFormComponent } from './components/visitor/rental-form/rental-form.component';
+import { ListingFormComponent } from './components/visitor/listing-form/listing-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { RentComponent } from './components/visitor/rent/rent.component';
     NavComponent,
     DashboardComponent,
     OurProjectsComponent,
-    RentComponent
+    RentComponent,
+    RentalFormComponent,
+    ListingFormComponent
   ],
   imports: [
     BrowserModule,
