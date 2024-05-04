@@ -6,7 +6,10 @@ export class Property {
     amenities:any;
     status:any;
     landlordId:any;
-    constructor(propertyid:any,propertytype:any,location:any,size:any,amentity:any,status:any,landloard:any){
+    price:any;
+	saleType:any;
+	landtype:any;
+    constructor(propertyid:any,propertytype:any,location:any,size:any,amentity:any,status:any,landloard:any,price:any,saleType:any,landtype:any){
         this.id=propertyid;
         this.type=propertytype;
         this.location=location;
@@ -14,5 +17,8 @@ export class Property {
         this.amenities=amentity;
         this.status=status;
         this.landlordId=landloard;
+        this.price=price;
+        this.saleType=saleType;
+        this.landtype=landtype;
     }
 }

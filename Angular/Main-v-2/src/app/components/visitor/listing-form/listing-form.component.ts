@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Property } from 'src/app/models/property';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -16,16 +17,22 @@ export class ListingFormComponent implements OnInit {
   details:any;
   status:any;
   landlordId:any;
+  price:any;
+  saleType:any;
+	landtype:any;
 
   property:any;
 
-  constructor(private myservice:LoginService) { }
+  constructor(private myservice:LoginService, private router:Router) { }
 
   ngOnInit(): void {
   }
   saveproperty(){
-    this.property=new Property(this.propertyId,this.type,this.location,this.size,this.details,this.status,this.landlordId);
-    this.myservice.saveproperty(this.property).subscribe();
+    this.property=new Property(this.propertyId,this.type,this.location,this.size,this.details,this.status,this.landlordId,this.price,this.saleType,this.landtype);
+    this.myservice.saveproperty(this.property).subscribe((x)=>{
+      alert("Property Listed");
+      this.router.navigateByUrl("/rent");
+    });
   }
 
 }

@@ -1,5 +1,8 @@
 package com.project.realestate;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,6 +49,17 @@ public class UsersController {
 			PropertyDA da= new PropertyDA();
 			Property data= da.save(p);
 			return data;
+		}
+		
+		//--------------------------all property-----------------------------
+		
+		@GetMapping("/getproperty")
+		public List<Property> allproperty(){
+			List<Property> property=new ArrayList<>();
+			
+			PropertyDA da=new PropertyDA();
+			property = da.allproperty();
+			return property;
 		}
 		
 }

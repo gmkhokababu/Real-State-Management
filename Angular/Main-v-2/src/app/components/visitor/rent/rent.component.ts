@@ -15,5 +15,14 @@ export class RentComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  check:boolean=false;
+
+  m(){
+    if (this.allproperty!=null){
+      this.check=true;
+      this.myservice.showall().subscribe((x)=>{this.allproperty=x});
+    }
+  }
+  
 
 }

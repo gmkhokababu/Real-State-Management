@@ -14,7 +14,7 @@ public class PropertyDA {
 	String url="jdbc:mysql://localhost/realestate";
 	String user="root";
 	String pass="abu420";
-	String insert="insert into property values(?,?,?,?,?,?,?)";
+	String insert="insert into property values(?,?,?,?,?,?,?,?,?,?)";
 	String show="select * from property";
 	
 	public Property save(Property p) {
@@ -29,6 +29,9 @@ public class PropertyDA {
 			ps.setString(5, p.getAmenities());
 			ps.setString(6, p.getStatus());
 			ps.setInt(7, p.getLandlordId());
+			ps.setInt(8, p.getPrice());
+			ps.setString(9, p.getSaleType());
+			ps.setString(10, p.getLandtype());
 			ps.executeUpdate();
 			con.close();
 		}catch(Exception e) {
@@ -37,6 +40,8 @@ public class PropertyDA {
 		return p;
 	}
 	
+	//-----------------------------Show all property------------------------------------
+	
 	public List<Property> allproperty(){
 		List<Property> property=new ArrayList<>();
 		try {
@@ -44,7 +49,7 @@ public class PropertyDA {
 			ps=con.prepareStatement(show);
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				property.add( new Property(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getInt(7)));
+				property.add( new Property(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getInt(7),rs.getInt(8),rs.getString(9),rs.getString(10)));
 			}
 		}catch(Exception e) {
 			
