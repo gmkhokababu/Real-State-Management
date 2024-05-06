@@ -3,13 +3,27 @@
     <div>
         <div class="container my-5">
             <form (ngSubmit)="saveproperty()">
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <label for="propertyId" class="form-label">Property Id</label>
                   <input type="text" class="form-control" id="propertyId" name="propertyId" [(ngModel)]="propertyId">
-                </div>
+                </div> -->
                 <div class="mb-3">
                   <label for="type" class="form-label">Property Type</label>
-                  <input type="text" class="form-control" id="type" name="type" [(ngModel)]="type">
+                  <!-- <input type="text" class="form-control" id="type" name="type" [(ngModel)]="type"> -->
+                  <div class="form-control">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="type" id="type" value="residential" [(ngModel)]="type"> 
+                      <label class="form-check-label" for="inlineRadio1">Residential</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="type" id="type" value="commercial" [(ngModel)]="type">
+                      <label class="form-check-label" for="inlineRadio2">Commercial</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="type" id="type" value="industrial" [(ngModel)]="type">
+                      <label class="form-check-label" for="inlineRadio3">Industrial</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
@@ -21,12 +35,13 @@
                   </div>
                   <div class="mb-3">
                     <label for="details" class="form-label">Details</label>
-                    <input type="text" class="form-control" id="details" name="details" [(ngModel)]="details">
+                    <!-- <input type="text" class="form-control" id="details" name="details" [(ngModel)]="details"> -->
+                    <textarea class="form-control" name="details" id="details" [(ngModel)]="details"></textarea>
                   </div>
-                  <div class="mb-3">
+                  <!-- <div class="mb-3">
                     <label for="status" class="form-label">Stutas</label >
                     <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status">
-                  </div>
+                  </div> -->
                   <div class="mb-3">
                     <label for="landlordId" class="form-label">Landlord Id</label>
                     <input type="text" class="form-control" id="landlordId" name="landlordId" [(ngModel)]="landlordId">
@@ -36,8 +51,23 @@
                     <input type="text" class="form-control" id="price" name="price" [(ngModel)]="price">
                   </div>
                   <div class="mb-3">
-                    <label for="saleType" class="form-label">Sale Type</label>
-                    <input type="text" class="form-control" id="saleType" name="saleType" [(ngModel)]="saleType">
+                    <label for="saleType" class="form-label">Service Type</label>
+                    <!-- <input type="text" class="form-control" id="saleType" name="saleType" [(ngModel)]="saleType"> -->
+                    <div class="form-control">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saleType" id="inlineRadio1" value="sale" [(ngModel)]="saleType"> 
+                        <label class="form-check-label" for="inlineRadio1">Sale</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saleType" id="inlineRadio2" value="rent" [(ngModel)]="saleType">
+                        <label class="form-check-label" for="inlineRadio2">Rent</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saleType" id="inlineRadio3" value="lease" [(ngModel)]="saleType">
+                        <label class="form-check-label" for="inlineRadio3">Lease</label>
+                      </div>
+                    </div>
+                    
                   </div>
                   <div class="mb-3">
                     <label for="landtype" class="form-label">Space Type</label>
