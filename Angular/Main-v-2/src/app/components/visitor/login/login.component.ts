@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         // this.router.navigateByUrl("/admin",{state:{responce:this.user}});
         // this.role=this.user.role;
         // if(this.role=="admin"){
-        //   this.router.navigateByUrl("admin",{state:{responce:this.user}});
+        //   this.router.navigateByUrl("/admin",{state:{responce:this.user}});
         // }
       }
     })
