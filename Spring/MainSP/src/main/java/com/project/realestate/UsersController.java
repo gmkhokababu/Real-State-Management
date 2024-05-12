@@ -62,4 +62,37 @@ public class UsersController {
 			return property;
 		}
 		
+		//--------------------------all country----------------------
+		
+		@GetMapping("/country")
+		public List<Country> allcountry(){
+			List<Country> property=new ArrayList<>();
+			
+			CountryDA da=new CountryDA();
+			property = da.allcountry();
+			return property;
+		}
+		
+		//--------------------------all Division----------------------
+		
+				@GetMapping("/division")
+				public List<Division> alldivision(){
+					List<Division> division=new ArrayList<>();
+					
+					DivisionDA da=new DivisionDA();
+					division = da.alldivision();
+					return division;
+				}
+				
+				//--------------------------all city----------------------
+				
+				@GetMapping("/city")
+				public List<City> allcity(){
+					List<City> city=new ArrayList<>();
+					
+					CityDA da=new CityDA();
+					city = da.allcity();
+					return city;
+				}		
+		
 }

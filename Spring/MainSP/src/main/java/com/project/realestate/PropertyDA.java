@@ -14,7 +14,7 @@ public class PropertyDA {
 	String url="jdbc:mysql://localhost/realestate";
 	String user="root";
 	String pass="abu420";
-	String insert="insert into property values(?,?,?,?,?,?,?,?,?,?)";
+	String insert="insert into property (propertyType,location,size,amenities,landlord_id,price,saleType,type) values(?,?,?,?,?,?,?,?)";
 	String show="select * from property";
 	
 	public Property save(Property p) {
@@ -22,16 +22,16 @@ public class PropertyDA {
 		try {
 			con=DriverManager.getConnection(url,user,pass);
 			ps=con.prepareStatement(insert);
-			ps.setInt(1, p.getId());
-			ps.setString(2, p.getType());
-			ps.setString(3, p.getLocation());
-			ps.setInt(4, p.getSize());
-			ps.setString(5, p.getAmenities());
-			ps.setString(6, p.getStatus());
-			ps.setInt(7, p.getLandlordId());
-			ps.setInt(8, p.getPrice());
-			ps.setString(9, p.getSaleType());
-			ps.setString(10, p.getLandtype());
+//			ps.setInt(1, p.getId());
+			ps.setString(1, p.getType());
+			ps.setString(2, p.getLocation());
+			ps.setInt(3, p.getSize());
+			ps.setString(4, p.getAmenities());
+//			ps.setString(5, p.getStatus());
+			ps.setInt(5, p.getLandlordId());
+			ps.setInt(6, p.getPrice());
+			ps.setString(7, p.getSaleType());
+			ps.setString(8, p.getLandtype());
 			ps.executeUpdate();
 			con.close();
 		}catch(Exception e) {

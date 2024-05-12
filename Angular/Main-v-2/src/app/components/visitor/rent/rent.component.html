@@ -8,7 +8,9 @@
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{i.landtype | titlecase}} For {{i.saleType | titlecase}}</h5>
-                        <h5 class="card-title">{{i.type | titlecase}}</h5>
+                        <h5 class="card-title">Property Type: {{i.type | titlecase}}</h5>
+                        <p class="card-text">Size : {{i.size }} Square Feet</p>
+                        <p class="card-text">{{i.saleType | titlecase}} Ammount : {{i.price }}</p>
                         <p class="card-text" style="height: 3rem;">{{i.amenities | titlecase}}</p>
                         <a href="#" class="btn btn-primary" *ngIf="i.saleType=='sale'; else modal">Request For Buy</a>
                         <ng-template #modal>

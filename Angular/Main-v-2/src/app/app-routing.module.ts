@@ -9,6 +9,8 @@ import { OurProjectsComponent } from './components/visitor/our-projects/our-proj
 import { RentComponent } from './components/visitor/rent/rent.component';
 import { RentalFormComponent } from './components/visitor/rental-form/rental-form.component';
 import { ListingFormComponent } from './components/visitor/listing-form/listing-form.component';
+import { LandloardComponent } from './components/main/landloard/landloard.component';
+import { LandloardDashboardComponent } from './components/main/landloard/landloard-dashboard/landloard-dashboard.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -21,6 +23,11 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent,
     children:[
       {path:'',component:DashboardComponent}
+    ]
+  },
+  {path:'landloard',component:LandloardComponent,
+    children:[
+      {path:'',component:LandloardDashboardComponent}
     ]
   }
 ];
