@@ -32,6 +32,10 @@ export class LoginComponent implements OnInit {
 
         if (this.user.role=="admin"){
           this.router.navigateByUrl("/admin");
+        }else  if (this.user.role=="landowner"){
+          this.router.navigateByUrl("/landloard");
+        }else  if (this.user.role=="system"){
+          this.router.navigateByUrl("/admin");
         }
       }
     })

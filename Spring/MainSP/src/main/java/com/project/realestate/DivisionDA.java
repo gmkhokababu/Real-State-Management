@@ -16,12 +16,31 @@ public class DivisionDA {
 	String pass="abu420";
 	String insert="insert into property (propertyType,location,size,amenities,landlord_id,price,saleType,type) values(?,?,?,?,?,?,?,?)";
 	String show="select * from division";
+	String showByCountryId="select * from division where countryId=?";
 	
 	public List<Division> alldivision(){
 		List<Division> division=new ArrayList<>();
 		try {
 			con=DriverManager.getConnection(url,user,pass);
 			ps=con.prepareStatement(show);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				division.add( new Division(rs.getInt(1),rs.getString(2),rs.getInt(3)));
+			}
+		}catch(Exception e) {
+			
+		}
+		
+		return division;
+	}
+	
+	//------------------------------------Devision By Id---------------------------------
+	public List<Division> divisionById(int id){
+		List<Division> division=new ArrayList<>();
+		try {
+			con=DriverManager.getConnection(url,user,pass);
+			ps=con.prepareStatement(showByCountryId);
+			ps.setInt(1, id);
 			rs=ps.executeQuery();
 			while(rs.next()) {
 				division.add( new Division(rs.getInt(1),rs.getString(2),rs.getInt(3)));

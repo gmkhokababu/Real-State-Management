@@ -83,7 +83,18 @@ public class UsersController {
 					division = da.alldivision();
 					return division;
 				}
+			
+				//--------------------------all Division----------------------
 				
+				@GetMapping("/division/{id}")
+				public List<Division> divisionById(@PathVariable int id ){
+					List<Division> division=new ArrayList<>();
+					
+					DivisionDA da=new DivisionDA();
+					division = da.alldivision();
+					return division;
+				}
+			
 				//--------------------------all city----------------------
 				
 				@GetMapping("/city")

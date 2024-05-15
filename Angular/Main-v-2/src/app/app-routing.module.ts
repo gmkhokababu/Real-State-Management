@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'project',component:OurProjectsComponent},
   {path:'rent',component:RentComponent},
   {path:'rental-form',component:RentalFormComponent},
-  {path:'listing-form',component:ListingFormComponent},
+  
   {path:'admin',component:AdminComponent,
     children:[
       {path:'',component:DashboardComponent}
@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   {path:'landloard',component:LandloardComponent,
     children:[
-      {path:'',component:LandloardDashboardComponent}
+      {path:'',component:LandloardDashboardComponent},
+      {path:'listing-form',component:ListingFormComponent},
     ]
   }
 ];
