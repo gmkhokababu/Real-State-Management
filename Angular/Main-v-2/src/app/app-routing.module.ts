@@ -11,9 +11,15 @@ import { RentalFormComponent } from './components/visitor/rental-form/rental-for
 import { ListingFormComponent } from './components/visitor/listing-form/listing-form.component';
 import { LandloardComponent } from './components/main/landloard/landloard.component';
 import { LandloardDashboardComponent } from './components/main/landloard/landloard-dashboard/landloard-dashboard.component';
+import { AllpropertyComponent } from './components/main/landloard/allproperty/allproperty.component';
+import { WonernotificationComponent } from './components/main/landloard/wonernotification/wonernotification.component';
+import { SheduleComponent } from './components/main/landloard/shedule/shedule.component';
+import { PrintAgreementComponent } from './components/print-agreement/print-agreement.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  
+  {path:'',component:RentComponent},
+  {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'about',component:AboutComponent},
   {path:'project',component:OurProjectsComponent},
@@ -29,8 +35,12 @@ const routes: Routes = [
     children:[
       {path:'',component:LandloardDashboardComponent},
       {path:'listing-form',component:ListingFormComponent},
+      {path:'allproperty',component:AllpropertyComponent},
+      {path:'notification',component:WonernotificationComponent},
+      {path:'shedule',component:SheduleComponent},
     ]
-  }
+  },
+  {path:'print-agreement',component:PrintAgreementComponent},
 ];
 
 @NgModule({

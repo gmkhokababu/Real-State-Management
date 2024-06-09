@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginservice.login(this.userName,this.password).subscribe((x)=>{
       this.user=x;
-      if(this.user!=null){
+      // if(this.user!=null){
         
         // this.router.navigateByUrl("/admin",{state:{responce:this.user}});
         // this.role=this.user.role;
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         }else  if (this.user.role=="system"){
           this.router.navigateByUrl("/admin");
         }
-      }
+      // }
     })
 
   }

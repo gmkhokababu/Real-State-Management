@@ -1,19 +1,27 @@
 package com.project.realestate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Tenant {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String name;
 	String presentAddress;
 	String permanentAddress;
 	String phoneNo;
 	String email;
-	String ocupation;
+	String occupation;
 	String propertyId;
 	public Tenant() {
 		super();
 	}
 	public Tenant(int id, String name, String presentAddress, String permanentAddress, String phoneNo, String email,
-			String ocupation, String propertyId) {
+			String occupation, String propertyId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,7 +29,7 @@ public class Tenant {
 		this.permanentAddress = permanentAddress;
 		this.phoneNo = phoneNo;
 		this.email = email;
-		this.ocupation = ocupation;
+		this.occupation = occupation;
 		this.propertyId = propertyId;
 	}
 	public int getId() {
@@ -60,11 +68,11 @@ public class Tenant {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getOcupation() {
-		return ocupation;
+	public String getOccupation() {
+		return occupation;
 	}
-	public void setOcupation(String ocupation) {
-		this.ocupation = ocupation;
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
 	}
 	public String getPropertyId() {
 		return propertyId;
@@ -75,13 +83,14 @@ public class Tenant {
 	@Override
 	public String toString() {
 		return "Tenant [id=" + id + ", name=" + name + ", presentAddress=" + presentAddress + ", permanentAddress="
-				+ permanentAddress + ", phoneNo=" + phoneNo + ", email=" + email + ", ocupation=" + ocupation
+				+ permanentAddress + ", phoneNo=" + phoneNo + ", email=" + email + ", occupation=" + occupation
 				+ ", propertyId=" + propertyId + ", getId()=" + getId() + ", getName()=" + getName()
 				+ ", getPresentAddress()=" + getPresentAddress() + ", getPermanentAddress()=" + getPermanentAddress()
-				+ ", getPhoneNo()=" + getPhoneNo() + ", getEmail()=" + getEmail() + ", getOcupation()=" + getOcupation()
-				+ ", getPropertyId()=" + getPropertyId() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", getPhoneNo()=" + getPhoneNo() + ", getEmail()=" + getEmail() + ", getOccupation()="
+				+ getOccupation() + ", getPropertyId()=" + getPropertyId() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+	
 	
 
 }

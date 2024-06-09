@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class RentComponent implements OnInit {
 
   allproperty:any=[];
-  constructor(private myservice:LoginService) {
+  constructor(private myservice:LoginService, private router:Router) {
     this.myservice.showall().subscribe((x)=>{this.allproperty=x});
    }
 
@@ -22,6 +23,9 @@ export class RentComponent implements OnInit {
       this.check=true;
       this.myservice.showall().subscribe((x)=>{this.allproperty=x});
     }
+  }
+  rent(propertyId:any,landloardId:any){
+    this.router.navigateByUrl("/rental-form",{state:{rentId:propertyId, landloardId:landloardId}});
   }
   
 

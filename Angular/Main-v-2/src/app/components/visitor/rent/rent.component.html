@@ -12,10 +12,10 @@
                         <p class="card-text">Size : {{i.size }} Square Feet</p>
                         <p class="card-text">{{i.saleType | titlecase}} Ammount : {{i.price }}</p>
                         <p class="card-text" style="height: 3rem;">{{i.amenities | titlecase}}</p>
-                        <a href="#" class="btn btn-primary" *ngIf="i.saleType=='sale'; else modal">Request For Buy</a>
-                        <ng-template #modal>
-                            <a href="#" class="btn btn-primary">Request For {{i.saleType | titlecase}}</a>
-                        </ng-template>
+                        <!-- <a href="#" class="btn btn-primary" *ngIf="i.saleType=='sale'; else modal" (click)="rent(i.id)">Request For Buy</a>
+                        <ng-template #modal> -->
+                            <a type="button" (click)="rent(i.id,i.landlordId)" class="btn btn-primary">Request For {{i.saleType | titlecase}}</a>
+                        <!-- </ng-template> -->
                         
                     </div>
                 </div>

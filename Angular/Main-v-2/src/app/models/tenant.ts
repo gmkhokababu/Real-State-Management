@@ -1,20 +1,20 @@
 export class Tenant {
-    tenantId:any;
-    tenantName:any;
-    tenantPresentAddress:any;
-    tenantPermanentAddress:any;
+    id:any;
+    name:any;
+    presentAddress:any;
+    permanentAddress:any;
     phoneNo:any;
     email:any;
-    ocupation:any;
+    occupation:any;
     propertyId:any;
     constructor(id:any,name:any,presentAddress:any,permanentAddress:any,phoneNo:any,email:any,ocupation:any,propertyId:any){
-        this.tenantId=id;
-        this.tenantName=name;
-        this.tenantPresentAddress=presentAddress;
-        this.tenantPermanentAddress=permanentAddress;
+        this.id=id;
+        this.name=name;
+        this.presentAddress=presentAddress;
+        this.permanentAddress=permanentAddress;
         this.phoneNo=phoneNo;
         this.email=email;
-        this.ocupation=ocupation;
+        this.occupation=ocupation;
         this.propertyId=propertyId;
     }
 }

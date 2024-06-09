@@ -21,6 +21,10 @@ import { ListingFormComponent } from './components/visitor/listing-form/listing-
 import { LandloardComponent } from './components/main/landloard/landloard.component';
 import { LandloardDashboardComponent } from './components/main/landloard/landloard-dashboard/landloard-dashboard.component';
 import { LandloardNavComponent } from './components/main/landloard/landloard-nav/landloard-nav.component';
+import { AllpropertyComponent } from './components/main/landloard/allproperty/allproperty.component';
+import { WonernotificationComponent } from './components/main/landloard/wonernotification/wonernotification.component';
+import { SheduleComponent } from './components/main/landloard/shedule/shedule.component';
+import { PrintAgreementComponent } from './components/print-agreement/print-agreement.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { LandloardNavComponent } from './components/main/landloard/landloard-nav
     ListingFormComponent,
     LandloardComponent,
     LandloardDashboardComponent,
-    LandloardNavComponent
+    LandloardNavComponent,
+    AllpropertyComponent,
+    WonernotificationComponent,
+    SheduleComponent,
+    PrintAgreementComponent
   ],
   imports: [
     BrowserModule,

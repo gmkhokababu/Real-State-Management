@@ -1,5 +1,6 @@
 package com.project.realestate;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UsersController {
 	
+	private final TenantRepo tenantRepo;
+	private final NotificationRepo notificationRepo;
+	
+	public UsersController(TenantRepo tenantRepo,NotificationRepo notificationRepo) {
+		this.tenantRepo=tenantRepo;
+		this.notificationRepo=notificationRepo;
+	}
+	
 	//---------------------------user login--------------------------
 	
 		@GetMapping("/{id}/{password}")
@@ -27,6 +36,7 @@ public class UsersController {
 		
 		@PostMapping("/create-user")
 		public Users create(@RequestBody Users u) {
+			System.out.println("User Controller");
 			UsersDA da= new UsersDA();
 			Users data = da.create(u);
 			return data;
@@ -104,6 +114,84 @@ public class UsersController {
 					CityDA da=new CityDA();
 					city = da.allcity();
 					return city;
-				}		
-		
+				}	
+				
+				//------------------Get tenant by Id-------------------------
+				@GetMapping("/tenant/{id}")
+				public Tenant getTenantById(@PathVariable int id) {
+					
+					System.out.println("Tenant id=> "+id);
+					TenantDA da = new TenantDA();
+					return da.getTenantbyId(id);
+				}
+
+				
+				//------------------------Notification Save----------------------------
+				
+				@GetMapping("/save-notification/{phone}/{landloardId}")
+				public void saveNotification(@PathVariable String phone, @PathVariable int landloardId) {
+					System.out.println("Phone=> "+phone);
+					System.out.println("landloardId=> "+landloardId);
+					NotificationDA da = new NotificationDA();
+					da.SaveNotification(phone, landloardId);
+				}
+				
+				//==========================update Notification=======================================
+				@GetMapping("/update-notification/{notificationStatus}/{notificationId}")
+				public void updateNotification(@PathVariable String notificationStatus, @PathVariable int notificationId) {
+					System.out.println("notificationStatus=> "+notificationStatus);
+					System.out.println("notificationId=> "+notificationId);
+					NotificationDA da = new NotificationDA();
+					da.updteNotification(notificationStatus, notificationId);
+				}
+				
+				List<Notification> allNotification=new ArrayList<>();
+				@GetMapping("/get-notification")
+				public List<Notification> notification(){
+					NotificationDA da= new NotificationDA();
+					allNotification=da.allNotification();
+//					allNotification=(List<Notification>) notificationRepo.findAll();
+					
+					return allNotification;
+				}	
+				
+				
+				
+//				======================create a schedule=================================
+				
+				@GetMapping("/save-schedule/{date}/{time}/{tourType}/{propertyId}/{visitorId}")
+				public void createSchedule(@PathVariable Date date, @PathVariable String time, @PathVariable String tourType, @PathVariable int propertyId, @PathVariable int visitorId){
+					ScheduleATourDA da= new ScheduleATourDA();
+					da.saveShedule(date, time, tourType, propertyId, visitorId);
+					
+					
+				}	
+				
+				@GetMapping("/all-schedule")
+				public List<ScheduleATour> createSchedule(){
+					ScheduleATourDA da= new ScheduleATourDA();
+					return da.getAllData();
+					
+					
+				}	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 }
